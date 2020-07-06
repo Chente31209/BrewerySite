@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "TRSFBrewerConsole/1.0.0": {
+        "dependencies": {
+          "TRSFBrewery": "1.0.0"
+        },
+        "runtime": {
+          "TRSFBrewerConsole.dll": {}
+        }
+      },
+      "TRSFBrewery/1.0.0": {
+        "runtime": {
+          "TRSFBrewery.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TRSFBrewerConsole/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TRSFBrewery/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

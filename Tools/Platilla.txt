@@ -1,0 +1,8 @@
+using System;
+namespace TRSFBrewery
+{
+    public class NombreDeLaClase
+    {
+        
+    }
+}

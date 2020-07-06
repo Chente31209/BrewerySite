@@ -1,0 +1,5 @@
+BreweryDBStyleName[0]
+BreweryDBCategory[1]
+CraftBeerCategory[2]
+Scenario[3]
+Description[4]

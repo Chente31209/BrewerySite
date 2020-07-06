@@ -1,0 +1,16 @@
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\bin\Debug\netcoreapp3.1\TRSFBrewerConsole.exe
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\bin\Debug\netcoreapp3.1\TRSFBrewerConsole.deps.json
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\bin\Debug\netcoreapp3.1\TRSFBrewerConsole.runtimeconfig.json
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\bin\Debug\netcoreapp3.1\TRSFBrewerConsole.runtimeconfig.dev.json
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\bin\Debug\netcoreapp3.1\TRSFBrewerConsole.dll
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\bin\Debug\netcoreapp3.1\TRSFBrewerConsole.pdb
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\bin\Debug\netcoreapp3.1\TRSFBrewery.dll
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\bin\Debug\netcoreapp3.1\TRSFBrewery.pdb
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\obj\Debug\netcoreapp3.1\TRSFBrewerConsole.csprojAssemblyReference.cache
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\obj\Debug\netcoreapp3.1\TRSFBrewerConsole.AssemblyInfoInputs.cache
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\obj\Debug\netcoreapp3.1\TRSFBrewerConsole.AssemblyInfo.cs
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\obj\Debug\netcoreapp3.1\TRSFBrewerConsole.csproj.CoreCompileInputs.cache
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\obj\Debug\netcoreapp3.1\TRSFBrewerConsole.csproj.CopyComplete
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\obj\Debug\netcoreapp3.1\TRSFBrewerConsole.dll
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\obj\Debug\netcoreapp3.1\TRSFBrewerConsole.pdb
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewerConsole\obj\Debug\netcoreapp3.1\TRSFBrewerConsole.genruntimeconfig.cache

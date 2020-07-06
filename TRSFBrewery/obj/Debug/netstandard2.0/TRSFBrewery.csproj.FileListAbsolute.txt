@@ -1,0 +1,9 @@
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\bin\Debug\netstandard2.0\TRSFBrewery.deps.json
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\bin\Debug\netstandard2.0\TRSFBrewery.dll
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\bin\Debug\netstandard2.0\TRSFBrewery.pdb
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\obj\Debug\netstandard2.0\TRSFBrewery.csprojAssemblyReference.cache
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\obj\Debug\netstandard2.0\TRSFBrewery.AssemblyInfoInputs.cache
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\obj\Debug\netstandard2.0\TRSFBrewery.AssemblyInfo.cs
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\obj\Debug\netstandard2.0\TRSFBrewery.csproj.CoreCompileInputs.cache
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\obj\Debug\netstandard2.0\TRSFBrewery.dll
+D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\TRSFBrewery\obj\Debug\netstandard2.0\TRSFBrewery.pdb
