@@ -12,6 +12,7 @@ namespace TRSFBrewery
 
         public Categories Parse(String Row)
         {
+            Loogers loogers=new Loogers();
             try
             {
                 Categories categories = new Categories();
@@ -33,6 +34,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
+                
                 return null;
             }
         }

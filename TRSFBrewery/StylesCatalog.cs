@@ -7,7 +7,7 @@ namespace TRSFBrewery
     public class StylesCatalog:Catalog
     {
         /// <summary>
-        ///  
+        ///  este metodo es para transformar una linea de un arachivo a un objeto 
         /// </summary>
         public Style Parse(String Row)
         {
