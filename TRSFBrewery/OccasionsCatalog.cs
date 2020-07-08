@@ -12,6 +12,7 @@ namespace TRSFBrewery
 
         public Occasions Parse(String Row)
         {
+            Loogers logError=new Loogers();
             try
             {
                 Occasions occasions = new Occasions();
@@ -36,6 +37,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
+                logError.LogError(e.Message);
                 return null;
             }
         }

@@ -12,6 +12,8 @@ namespace TRSFBrewery
 
         public Beer Parse(String Row)
         {
+            Loogers logError=new Loogers();
+            Brewery Brewery = new Brewery();
             try
             {
                 Beer beer = new Beer();
@@ -39,6 +41,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
+                logError.LogError(e.Message);
                 return null;
             }
         }

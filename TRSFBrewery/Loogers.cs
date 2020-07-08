@@ -13,8 +13,10 @@ namespace TRSFBrewery
         public void LogError(String error)
         {
             String fileName=@"D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\Files\LongError.txt";
-           //sting[] erro =new sting[];
-           //File.WriteAllLines(fileName,erro);
+           String[] e =new String[2];
+           e[0]="----Error en la ejecucion <Decripcion>> ";
+           e[1]=error;
+           File.WriteAllLines(fileName , e);
            
         }
     }

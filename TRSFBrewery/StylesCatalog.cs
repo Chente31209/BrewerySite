@@ -11,6 +11,7 @@ namespace TRSFBrewery
         /// </summary>
         public Style Parse(String Row)
         {
+            Loogers logError=new Loogers();
             try
             {
                 Style style = new Style();
@@ -43,6 +44,7 @@ namespace TRSFBrewery
             }
             catch(Exception e)
             {
+                logError.LogError(e.Message);
                 return null;
             }
         }

@@ -34,7 +34,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
-                
+                loogers.LogError(e.Message);
                 return null;
             }
         }
