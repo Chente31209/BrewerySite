@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace TRSFBrewery
 {
     public class OccasionsCatalog : Catalog
@@ -45,12 +47,11 @@ namespace TRSFBrewery
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="FileName"></param>
-        /// <returns></returns>
-        public List<Occasions> GetlistOccasions(String FileName)
+        
+        public async Task <List<Occasions>> GetlistOccasions(String FileName)
         {
             List<Occasions> listOccasions = new List<Occasions>();
-            var Line = load(FileName);
+            var Line =await loadAsync(FileName);
             foreach (var item in Line)
             {
                 var notnull = Parse(item);

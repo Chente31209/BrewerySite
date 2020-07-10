@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 
 namespace TRSFBrewery
 {
-    public class StylesCatalog:Catalog
+    public class StylesCatalog : Catalog
     {
         /// <summary>
         ///  este metodo es para transformar una linea de un arachivo a un objeto 
         /// </summary>
         public Style Parse(String Row)
         {
-            Loogers logError=new Loogers();
+            Loogers logError = new Loogers();
             try
             {
                 Style style = new Style();
@@ -35,14 +35,17 @@ namespace TRSFBrewery
                         style.FG_Low = styles[12];
                         style.FG_High = styles[13];
                         style.GlassType = styles[14];
-
+                        return style;
                     }
-                    return style;
+                    else 
+                        return null;
+
+
                 }
                 else
                     return null;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 logError.LogError(e.Message);
                 return null;
@@ -52,14 +55,14 @@ namespace TRSFBrewery
         /// <summary>
         /// 
         /// </summary>
-        public List<Style> getListStyle(String filename)
+        public async Task<List<Style>> getListStyleAsync(String filename)
         {
-            List<Style> listStyle = new List<Style> {};
-            String[] Line = load(filename);
+            List<Style> listStyle = new List<Style> { };
+            String[] Line = await loadAsync(filename);
 
             foreach (var item in Line)
             {
-                
+
                 var notnull = Parse(item);
                 if (notnull != null)
                     listStyle.Add(notnull);

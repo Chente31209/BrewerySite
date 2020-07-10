@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace TRSFBrewery
 {
     public class CategoriesCatalog : Catalog
@@ -23,11 +25,12 @@ namespace TRSFBrewery
                     {
                         categories.Id=int.Parse(categor[0]);
                         categories.cat_name=categor[1];
-                       
-
+                        return categories;
                     }
-                    return categories;
+                    else 
+                    return null;
                 }
+                else 
                 return null;
 
 
@@ -44,10 +47,10 @@ namespace TRSFBrewery
         /// </summary>
         /// <param name="FileName"></param>
         /// <returns></returns>
-        public List<Categories> GetlistCategories(String FileName)
+        public async Task <List<Categories>> GetlistCategories(String FileName)
         {
             List<Categories> listCategories = new List<Categories>();
-            var Line = load(FileName);
+            var Line =await loadAsync(FileName);
             foreach (var item in Line)
             {
                 var notnull = Parse(item);

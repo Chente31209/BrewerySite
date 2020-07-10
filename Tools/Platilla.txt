@@ -1,8 +1,7 @@
-using System;
-namespace TRSFBrewery
-{
-    public class NombreDeLaClase
-    {
-        
-    }
-}
+id,     brewery_id,      name,               cat_id,    style_id,      abv,     ibu,   srm,    upc,   descript
+2,      264     ,        Grimbergen Blonde,         -1,        -1,            6.       7,      10,     0,    0  
+
+
+
+"id",   "name",                   "address1","address2","city","state","code","country","phone","website","filepath","descript","last_mod"
+"264",  "Brouwerij Alken-Maes",    "Rue Derbque 7",,"Jumet","Hainaut",,"Belgium","32-071-34-02-22",,,,"2010-07-22 20:00:20"

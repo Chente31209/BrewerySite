@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TRSFBrewery
 {
@@ -13,9 +14,10 @@ namespace TRSFBrewery
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-        public String[] load(String filename)
+        public async Task <String[]> loadAsync(String filename)
         {
-            var list = File.ReadAllLines(filename);
+            //var list = File.ReadAllLines(filename);
+            var list = await File.ReadAllLinesAsync(filename);
             return list;
         }
 

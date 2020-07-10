@@ -16,7 +16,7 @@ namespace TRSFBrewery
            String[] e =new String[2];
            e[0]="----Error en la ejecucion <Decripcion>> ";
            e[1]=error;
-           File.WriteAllLines(fileName , e);
+           File.WriteAllLinesAsync(fileName , e);
            
         }
     }

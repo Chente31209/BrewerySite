@@ -10,12 +10,14 @@ namespace TRSFBreweryTest
         [InlineData("21,1142,Bigfoot 2001,-1,-1,9.6,10,0,0")]
         [InlineData("146,1392,Yeti Special Export,8,95,7,10,0,0")]
         [InlineData("218,501,Summer Common,-1,-1,4.5,10,0,0")]
-        [InlineData($" \" hola mindo \" ")]
-        public void ParseTest()
+        
+        public void ParseTest(String row)
         {
-            TRSFBrewery.Beer beer=new TRSFBrewery.Beer();
+            BeerCatalog beer=new BeerCatalog();
+
             var result=beer.Parse(row);
-            Assert.IsType(typeof(Style), result);
+            Assert.IsType(typeof(Beer), result);
+            Assert.True(result.name.Length>0);
 
         }
     }

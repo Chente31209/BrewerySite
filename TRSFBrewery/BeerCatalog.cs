@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace TRSFBrewery
 {
     public class BeerCatalog : Catalog
@@ -13,28 +15,31 @@ namespace TRSFBrewery
         public Beer Parse(String Row)
         {
             Loogers logError=new Loogers();
-            Brewery Brewery = new Brewery();
             try
             {
                 Beer beer = new Beer();
                 if (!string.IsNullOrEmpty(Row) && !string.IsNullOrWhiteSpace(Row))
                 {
                     var Breweries = Row.Split(',');
-                    if (Breweries.Length == 10)
+                    if (Breweries.Length >= 10)
                     {
                         beer.Id = int.Parse(Breweries[0]);
-                        beer.brewery_id = int.Parse(Breweries[0]);
-                        beer.name = Breweries[3];
-                        beer.cat_id = int.Parse(Breweries[0]);
-                        beer.style_id = int.Parse(Breweries[0]);
-                        beer.abv = Breweries[6];
-                        beer.ibu = Breweries[7];
+                        beer.brewery_id = int.Parse(Breweries[1]);
+                        beer.name = Breweries[2];
+                        beer.cat_id = int.Parse(Breweries[3]);
+                        beer.style_id = int.Parse(Breweries[4]);
+                        beer.abv = Breweries[5];
+                        beer.ibu = Breweries[6];
                         beer.srm = Breweries[7];
                         beer.upc = Breweries[8];
                         beer.descript = Breweries[9];
+                        return beer;
                     }
-                    return beer;
+                    else
+                    return null;
+                    
                 }
+                else
                 return null;
 
 
@@ -51,10 +56,10 @@ namespace TRSFBrewery
         /// </summary>
         /// <param name="FileName"></param>
         /// <returns></returns>
-        public List<Beer> GetlistBeer(String FileName)
+        public async Task <List<Beer>>  GetlistBeerAsync(String FileName)
         {
             List<Beer> listBeer = new List<Beer>();
-            var Line = load(FileName);
+            var Line = await loadAsync(FileName);
             foreach (var item in Line)
             {
                 var notnull = Parse(item);
@@ -63,6 +68,15 @@ namespace TRSFBrewery
 
             }
             return listBeer;
+        }
+        /// <summary>
+        /// en ete metodo se realisa la busqueda 
+        /// </summary>
+        /// <param name="name"></param>
+        public async Task getBeerAsync (string name )
+        {
+            Searchin searchin= new Searchin();
+            await searchin.searchBeerAsync(name);
 
         }
     }

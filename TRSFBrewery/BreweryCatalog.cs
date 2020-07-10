@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace TRSFBrewery
 {
     public class BreweryCatalog : Catalog
@@ -19,7 +21,7 @@ namespace TRSFBrewery
                 if (!string.IsNullOrEmpty(Row) && !string.IsNullOrWhiteSpace(Row))
                 {
                     var Breweries = Row.Split(',');
-                    if (Breweries.Length == 12)
+                    if (Breweries.Length >= 12)
                     {
                         Brewery.Id=int.Parse(Breweries[0]);
                         Brewery.name=Breweries[1];
@@ -34,12 +36,15 @@ namespace TRSFBrewery
                         Brewery.filepath=Breweries[10];
                         Brewery.descript=Breweries[11];
                         Brewery.last_mod=Breweries[12];
-                       
+                       return Brewery;
 
                     }
-                    return Brewery;
+                    else 
+                        return null ;
+                    
                 }
-                return null;
+                else 
+                    return null;
 
 
             }
@@ -55,16 +60,20 @@ namespace TRSFBrewery
         /// </summary>
         /// <param name="FileName"></param>
         /// <returns></returns>
-        public List<Brewery> GetlistBrewery(String FileName)
+        public async Task <List<Brewery>> GetlistBrewery(String FileName)
         {
             List<Brewery> listBrewery = new List<Brewery>();
-            var Line = load(FileName);
+            var Line =await loadAsync(FileName);
             foreach (var item in Line)
             {
                 var notnull = Parse(item);
                 if (notnull != null)
                     listBrewery.Add(notnull);
 
+            }
+            foreach(var item in listBrewery)
+            {
+                Console.WriteLine($"{item.Id} {item.name}");
             }
             return listBrewery;
 
