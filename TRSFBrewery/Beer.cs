@@ -6,7 +6,7 @@ namespace TRSFBrewery
         
         public int Id{ get; set; }
         public int brewery_id{ get; set; }
-        public String name { get; set; }
+        public String Beer_name { get; set; }
         public int cat_id{ get; set; }
          public int style_id{ get; set; }
         public String abv { get; set; }

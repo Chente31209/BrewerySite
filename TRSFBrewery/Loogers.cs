@@ -10,14 +10,16 @@ namespace TRSFBrewery
         /// With this method, errors arising during the execution are guaranteed.
         /// </summary>
         /// <param name="error"></param>
-        public void LogError(String error)
+        public void LogError(String error, String NoCatalog)
         {
-            String fileName=@"D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\Files\LongError.txt";
-           String[] e =new String[2];
-           e[0]="----Error en la ejecucion <Decripcion>> ";
-           e[1]=error;
-           File.WriteAllLinesAsync(fileName , e);
-           
+            String fileName=@"..\\Files\\LongError.txt";
+           using (StreamWriter sw = File.AppendText(fileName))
+           {
+               sw.WriteLine("----Error en la ejecucion <Decripcion>> ");
+               sw.WriteLine(error);
+               sw.WriteLine($"el numero del arhivo es {NoCatalog}");
+
+           }
         }
     }
     

@@ -7,9 +7,7 @@ namespace TRSFBreweryTest
     public class BeerCatalogTest
     {
         [Theory]
-        [InlineData("21,1142,Bigfoot 2001,-1,-1,9.6,10,0,0")]
-        [InlineData("146,1392,Yeti Special Export,8,95,7,10,0,0")]
-        [InlineData("218,501,Summer Common,-1,-1,4.5,10,0,0")]
+        [InlineData("269,1126,Amber,3,33,5,10,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,")]
         
         public void ParseTest(String row)
         {
@@ -17,7 +15,7 @@ namespace TRSFBreweryTest
 
             var result=beer.Parse(row);
             Assert.IsType(typeof(Beer), result);
-            Assert.True(result.name.Length>0);
+            Assert.True(result.Beer_name.Length>0);
 
         }
     }

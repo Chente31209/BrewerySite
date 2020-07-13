@@ -37,7 +37,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
-                loogers.LogError(e.Message);
+                loogers.LogError(e.Message,"3");
                 return null;
             }
         }
@@ -47,7 +47,7 @@ namespace TRSFBrewery
         /// </summary>
         /// <param name="FileName"></param>
         /// <returns></returns>
-        public async Task <List<Categories>> GetlistCategories(String FileName)
+        public async Task <List<Categories>> GetlistCategoriesAsync(String FileName)
         {
             List<Categories> listCategories = new List<Categories>();
             var Line =await loadAsync(FileName);

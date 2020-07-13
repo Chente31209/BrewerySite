@@ -8,14 +8,13 @@ namespace TRSFBrewerConsole
     {
         static async Task Main(string[] args) 
         {
-           
-            BeerCatalog beer=new BeerCatalog();
-            await beer.getBeerAsync("Hocus");
-        String BreweryFile=@"D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\Files\breweries.csv";
+        Searchin searhin = new Searchin();
+        searhin.searchIn("Unique");
 
-            BreweryCatalog b =new BreweryCatalog();
-           
-     
+       //await searhin.searchBeerAsync();
+
+        //searhin.searchInBeerandBreweryAsync();
+
         }
     }
 }

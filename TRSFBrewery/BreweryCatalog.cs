@@ -50,7 +50,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
-                logError.LogError(e.Message);
+                logError.LogError(e.Message,"2");
                 return null;
             }
         }

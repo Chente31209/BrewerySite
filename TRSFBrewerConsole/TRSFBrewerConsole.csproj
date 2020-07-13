@@ -7,7 +7,7 @@
   
 
   <ItemGroup>
-  <ProjectReference Include="..\TRSFBrewery\TRSFBrewery.csproj" />
+  <ProjectReference Include="..\TRSFBrewery\TRSFBrewery.csproj"/>
 </ItemGroup>
 
 </Project>

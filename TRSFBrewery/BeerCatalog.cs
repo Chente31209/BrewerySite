@@ -25,7 +25,7 @@ namespace TRSFBrewery
                     {
                         beer.Id = int.Parse(Breweries[0]);
                         beer.brewery_id = int.Parse(Breweries[1]);
-                        beer.name = Breweries[2];
+                        beer.Beer_name = Breweries[2];
                         beer.cat_id = int.Parse(Breweries[3]);
                         beer.style_id = int.Parse(Breweries[4]);
                         beer.abv = Breweries[5];
@@ -46,7 +46,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
-                logError.LogError(e.Message);
+                logError.LogError(e.Message,"1 Beer catalog");
                 return null;
             }
         }
@@ -76,7 +76,7 @@ namespace TRSFBrewery
         public async Task getBeerAsync (string name )
         {
             Searchin searchin= new Searchin();
-            await searchin.searchBeerAsync(name);
+           // await searchin.searchBeerAsync(name);
 
         }
     }

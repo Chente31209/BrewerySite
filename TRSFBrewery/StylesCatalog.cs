@@ -47,7 +47,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
-                logError.LogError(e.Message);
+                logError.LogError(e.Message,"5");
                 return null;
             }
         }

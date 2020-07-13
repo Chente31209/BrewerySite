@@ -8,9 +8,12 @@ namespace TRSFBrewery
     public class Searchin
     {
         // rutas de los catalogos 
-        String StylesFile=@"D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\Files\styles.csv";
-        String BeerFile=@"D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\Files\beers-cleaned.csv";
-        String BreweryFile=@"D:\User\Vicente\Proyectos\Cursos de Programacion\Curso de C#\Repocitorio\BrewerySite\Files\breweries.csv";
+        static String StylesFile = @"..\\Files\\styles.csv";
+        static String BeerFile = @"..\\Files\\beers-cleaned.csv";
+        static String BreweryFile = @"..\\Files\\breweries.csv";
+        static String OccasionsFile = @"..\\Files\\Occasions.csv";
+        static String CategoriesFile = @"..\\Files\\categories.csv";
+
         // objetos de los catalogos 
         BeerCatalog BC = new BeerCatalog();
         BreweryCatalog BrC = new BreweryCatalog();
@@ -18,34 +21,61 @@ namespace TRSFBrewery
         OccasionsCatalog OC = new OccasionsCatalog();
         StylesCatalog SC = new StylesCatalog();
         // variables de los objetos 
-        
-        public  async Task  searchBeerAsync(String Name)
+        /// <summary>
+        /// este metodo esta creado para al inroducir algunos ateres te muestre  el Beer,  brewery  y el estilo de la misma 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <returns></returns>
+        public async Task searchBeerAsync(/*String Name*/)
         {
-            var beer=await BC.GetlistBeerAsync(BeerFile);
-            var style= await SC.getListStyleAsync(StylesFile);
-            
+            var beer = await BC.GetlistBeerAsync(BeerFile);
+            var style = await SC.getListStyleAsync(StylesFile);
+            var brewery = await BrC.GetlistBrewery(BreweryFile);
+
             var bee = from bc in beer
-                    join sc in style on bc.style_id equals sc.Id into ps
-                    where bc.name == Name 
-                    select (beer: bc, ps.FirstOrDefault().style_name);
-                    foreach(var i in bee)
-                    {
-                        WriteLine($"{bee.FirstOrDefault().beer.name}  {bee.FirstOrDefault().style_name}");
-                    }
+                      join sc in style 
+                      on bc.style_id equals sc.Id into ps
+                      where ps.FirstOrDefault().Id==5
+                      select (beer: bc, ps.FirstOrDefault().style_name);
+            foreach (var i in bee)
+            {
+                WriteLine($"{bee.FirstOrDefault().beer.Beer_name}  {bee.FirstOrDefault().style_name}");
+               //WriteLine($"{i.beer.Beer_name} {i.style_name}");
+            }
+        }
 
-            /*
-            from num in numbers
-    where num < 3 || num > 7
-    select num;
+        /// <summary>
+        /// este metodo tiene la funionalidad de buar y mostrar el id de una tegoria dasa por el usario 
+        /// </summary>
+        /// <param name="cat"></param>
+        /// <returns></returns>
+        public async Task searchIn(String cat)
+        {
+            var ctaegoris = await CC.GetlistCategoriesAsync(CategoriesFile);
+
+            var SearchInCC = from c in ctaegoris
+                             where c.cat_name == cat
+                             select (c);
+            foreach (var i in SearchInCC)
+            {
+                WriteLine($"la ctegoria que buscas {i.cat_name} tiene el id de {i.Id}");
+
+            }
+
+        }
+
+
+        public async Task searchInBeerandBreweryAsync()
+        {
+            var beer = await BC.GetlistBeerAsync(BeerFile);
+            var brewery = await BrC.GetlistBrewery(BreweryFile);
+
+            var iWriterM = from b in beer
+                           join br in brewery
+                           on b.brewery_id equals br.Id
+                           select new { NameBeer = b.Beer_name, NameBrewery = br.name };
+
             
-            
-            var NBeer=from bc in beer
-                      join sc in style on bc equals sc into ps
-                      from sc in ps.DefaultIfEmpty()
-                      select (style_name: sc, name: bc == Name );
-                      //on brc in BrC.GetlistBrewery(BreweryFile)*/
-
-
         }
     }
 }

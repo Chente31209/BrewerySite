@@ -14,7 +14,7 @@ namespace TRSFBrewery
 
         public Occasions Parse(String Row)
         {
-            Loogers logError=new Loogers();
+            Loogers logError = new Loogers();
             try
             {
                 Occasions occasions = new Occasions();
@@ -23,23 +23,25 @@ namespace TRSFBrewery
                     var occ = Row.Split(',');
                     if (occ.Length == 5)
                     {
-                        occasions.BreweryDBStyleName=occ[0];
-                        occasions.BreweryDBCategory=occ[1];
-                        occasions.CraftBeerCategory=occ[2];
-                        occasions.Scenario=occ[3];
-                        occasions.Description=occ[4];
-
-
+                        occasions.BreweryDBStyleName = occ[0];
+                        occasions.BreweryDBCategory = occ[1];
+                        occasions.CraftBeerCategory = occ[2];
+                        occasions.Scenario = occ[3];
+                        occasions.Description = occ[4];
+                        return occasions;
                     }
-                    return occasions;
+                    else
+                    return null;
+
                 }
+                else
                 return null;
 
 
             }
             catch (Exception e)
             {
-                logError.LogError(e.Message);
+                logError.LogError(e.Message,"4");
                 return null;
             }
         }
@@ -47,11 +49,11 @@ namespace TRSFBrewery
         /// <summary>
         /// 
         /// </summary>
-        
-        public async Task <List<Occasions>> GetlistOccasions(String FileName)
+
+        public async Task<List<Occasions>> GetlistOccasions(String FileName)
         {
             List<Occasions> listOccasions = new List<Occasions>();
-            var Line =await loadAsync(FileName);
+            var Line = await loadAsync(FileName);
             foreach (var item in Line)
             {
                 var notnull = Parse(item);
