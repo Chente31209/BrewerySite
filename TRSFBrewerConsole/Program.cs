@@ -6,14 +6,16 @@ namespace TRSFBrewerConsole
 {
     class Program
     {
-        static async Task Main(string[] args) 
+        static async Task Main(string[] args)
         {
-        Searchin searhin = new Searchin();
-        searhin.searchIn("Unique");
+            Searchin searhin = new Searchin();
+            //searhin.searchIn("Unique");
 
-       //await searhin.searchBeerAsync();
+            //await searhin.ExpBr();
+            
+            //await searhin.searchInBeerandBreweryAsync();
 
-        //searhin.searchInBeerandBreweryAsync();
+            await searhin.searchBeerAsync() ;
 
         }
     }

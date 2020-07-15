@@ -14,7 +14,7 @@ namespace TRSFBrewery
 
         public Beer Parse(String Row)
         {
-            Loogers logError=new Loogers();
+            Loogers logError = new Loogers();
             try
             {
                 Beer beer = new Beer();
@@ -23,30 +23,64 @@ namespace TRSFBrewery
                     var Breweries = Row.Split(',');
                     if (Breweries.Length >= 10)
                     {
-                        beer.Id = int.Parse(Breweries[0]);
-                        beer.brewery_id = int.Parse(Breweries[1]);
-                        beer.Beer_name = Breweries[2];
-                        beer.cat_id = int.Parse(Breweries[3]);
-                        beer.style_id = int.Parse(Breweries[4]);
-                        beer.abv = Breweries[5];
-                        beer.ibu = Breweries[6];
-                        beer.srm = Breweries[7];
-                        beer.upc = Breweries[8];
-                        beer.descript = Breweries[9];
-                        return beer;
+                        if (int.TryParse(Breweries[0].Trim('"'), out int Id))
+                        {
+                            if (int.TryParse((Breweries[1]).Trim('"'), out int Brewery_id))
+                            {
+                                if (int.TryParse((Breweries[3]).Trim('"'), out int Cat_id))
+                                {
+                                    if (int.TryParse((Breweries[4]).Trim('"'), out int Style_id))
+                                    {
+                                        beer.Id = Id;
+                                        beer.brewery_id = Brewery_id;
+                                        beer.Beer_name = Breweries[2];
+                                        beer.cat_id = Cat_id;
+                                        beer.style_id = Style_id;
+                                        beer.abv = Breweries[5];
+                                        beer.ibu = Breweries[6];
+                                        beer.srm = Breweries[7];
+                                        beer.upc = Breweries[8];
+                                        beer.descript = Breweries[9];
+                                        return beer;
+                                        }
+                                    else
+                                    {
+                                        logError.LogError($"El valor que no se puede conbertir es {Breweries[4]} ", "1");
+                                        return null;
+                                    }
+                                }
+                                else
+                                {
+                                    logError.LogError($"El valor que no se puede conbertir es {Breweries[3]} ", "1");
+                                    return null;
+                                }
+
+
+                            }
+                            else
+                            {
+                                logError.LogError($"El valor que no se puede conbertir es {Breweries[1]} ", "1");
+                                return null;
+                            }
+                        }
+                        else
+                        {
+                            logError.LogError($"El valor que no se puede conbertir es {Breweries[0]} ", "1");
+                            return null;
+                        }
                     }
                     else
-                    return null;
-                    
+                        return null;
+
                 }
                 else
-                return null;
+                    return null;
 
 
             }
             catch (Exception e)
             {
-                logError.LogError(e.Message,"1 Beer catalog");
+                logError.LogError(e.Message, "1 Beer catalog");
                 return null;
             }
         }
@@ -56,7 +90,7 @@ namespace TRSFBrewery
         /// </summary>
         /// <param name="FileName"></param>
         /// <returns></returns>
-        public async Task <List<Beer>>  GetlistBeerAsync(String FileName)
+        public async Task<List<Beer>> GetlistBeerAsync(String FileName)
         {
             List<Beer> listBeer = new List<Beer>();
             var Line = await loadAsync(FileName);
@@ -73,10 +107,10 @@ namespace TRSFBrewery
         /// en ete metodo se realisa la busqueda 
         /// </summary>
         /// <param name="name"></param>
-        public async Task getBeerAsync (string name )
+        public async Task getBeerAsync(string name)
         {
-            Searchin searchin= new Searchin();
-           // await searchin.searchBeerAsync(name);
+            Searchin searchin = new Searchin();
+            // await searchin.searchBeerAsync(name);
 
         }
     }

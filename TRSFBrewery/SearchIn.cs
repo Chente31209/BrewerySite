@@ -31,17 +31,22 @@ namespace TRSFBrewery
             var beer = await BC.GetlistBeerAsync(BeerFile);
             var style = await SC.getListStyleAsync(StylesFile);
             var brewery = await BrC.GetlistBrewery(BreweryFile);
-
+            WriteLine($"|-.........->");
             var bee = from bc in beer
                       join sc in style 
                       on bc.style_id equals sc.Id into ps
-                      where ps.FirstOrDefault().Id==5
-                      select (beer: bc, ps.FirstOrDefault().style_name);
+                      join br in brewery
+                      on bc.brewery_id equals br.Id into sp
+                      
+                      //where bc.Id==5
+                      select (beer: bc, ps.FirstOrDefault().style_name,sp.FirstOrDefault().name);
             foreach (var i in bee)
             {
-                WriteLine($"{bee.FirstOrDefault().beer.Beer_name}  {bee.FirstOrDefault().style_name}");
-               //WriteLine($"{i.beer.Beer_name} {i.style_name}");
-            }
+                //WriteLine($"{bee.FirstOrDefault().beer.Beer_name}  {bee.FirstOrDefault().style_name}");
+               WriteLine($"|-----------------------------------------|");
+               WriteLine($"{i.beer.Beer_name} | {i.style_name} | {i.name}");
+
+            } WriteLine($"<-.........-|");
         }
 
         /// <summary>
@@ -67,15 +72,33 @@ namespace TRSFBrewery
 
         public async Task searchInBeerandBreweryAsync()
         {
+             WriteLine($"open==>");
             var beer = await BC.GetlistBeerAsync(BeerFile);
             var brewery = await BrC.GetlistBrewery(BreweryFile);
 
             var iWriterM = from b in beer
                            join br in brewery
-                           on b.brewery_id equals br.Id
-                           select new { NameBeer = b.Beer_name, NameBrewery = br.name };
+                           on b.brewery_id equals br.Id into ps
+                           select (beer: b, ps.FirstOrDefault().name);
+            foreach (var i in iWriterM)
+            {
+              WriteLine($"el beer es {i.beer.Beer_name} y su brewery es {i.name}");   
+            }
+            WriteLine($"<== close ");  
+        }
 
-            
+        public async Task ExpBr()
+        {
+            WriteLine("comenzo ");
+            var brewery = await BrC.GetlistBrewery(BreweryFile);
+            var result = from br in brewery 
+                        select br;
+
+            foreach (var item in result)
+            {
+                WriteLine($"{item.Id} {item.name}");
+            }
+            WriteLine("Se ejeto");
         }
     }
 }
