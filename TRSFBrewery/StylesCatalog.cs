@@ -18,7 +18,7 @@ namespace TRSFBrewery
                 if (!string.IsNullOrEmpty(Row) && !string.IsNullOrWhiteSpace(Row))
                 {
                     var styles = Row.Split(',');
-                    if (styles.Length == 14)
+                    if (styles.Length >= 14)
                     {
                         if (int.TryParse(styles[0].Trim('"'), out int Id))
                         {
@@ -82,7 +82,11 @@ namespace TRSFBrewery
                 var notnull = Parse(item);
                 if (notnull != null)
                     listStyle.Add(notnull);
-            }
+            }/*
+            foreach (var item in listStyle)
+            {
+                Console.WriteLine($"{item.Id} {item.style_name}");
+            }*/
 
             return listStyle;
         }

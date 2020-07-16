@@ -100,7 +100,11 @@ namespace TRSFBrewery
                 if (notnull != null)
                     listBeer.Add(notnull);
 
-            }
+            }/*
+            foreach (var item in listBeer)
+            {
+                Console.WriteLine($"{item.Id} {item.Beer_name}");
+            }*/
             return listBeer;
         }
         /// <summary>
@@ -110,7 +114,7 @@ namespace TRSFBrewery
         public async Task getBeerAsync(string name)
         {
             Searchin searchin = new Searchin();
-            // await searchin.searchBeerAsync(name);
+            await searchin.searchBeerAsync(name);
 
         }
     }

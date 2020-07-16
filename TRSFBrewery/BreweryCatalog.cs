@@ -80,10 +80,11 @@ namespace TRSFBrewery
                     listBrewery.Add(notnull);
 
             }
+            /*
             foreach (var item in listBrewery)
             {
                 Console.WriteLine($"{item.Id} {item.name}");
-            }
+            }*/
             return listBrewery;
 
         }

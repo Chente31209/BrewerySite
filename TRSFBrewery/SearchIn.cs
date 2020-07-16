@@ -26,7 +26,7 @@ namespace TRSFBrewery
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public async Task searchBeerAsync(/*String Name*/)
+        public async Task searchBeerAsync(String Name)
         {
             var beer = await BC.GetlistBeerAsync(BeerFile);
             var style = await SC.getListStyleAsync(StylesFile);
@@ -36,15 +36,16 @@ namespace TRSFBrewery
                       join sc in style 
                       on bc.style_id equals sc.Id into ps
                       join br in brewery
-                      on bc.brewery_id equals br.Id into sp
-                      
-                      //where bc.Id==5
+                     on bc.brewery_id equals br.Id into sp
+                      where bc.Beer_name==Name
                       select (beer: bc, ps.FirstOrDefault().style_name,sp.FirstOrDefault().name);
+                      //select (bc);
             foreach (var i in bee)
             {
-                //WriteLine($"{bee.FirstOrDefault().beer.Beer_name}  {bee.FirstOrDefault().style_name}");
+                
                WriteLine($"|-----------------------------------------|");
-               WriteLine($"{i.beer.Beer_name} | {i.style_name} | {i.name}");
+              WriteLine($"{i.beer.Beer_name} | {i.style_name} | {i.name}");
+              //WriteLine($"{i.Beer_name} {i.brewery_id} {i.style_id}");
 
             } WriteLine($"<-.........-|");
         }

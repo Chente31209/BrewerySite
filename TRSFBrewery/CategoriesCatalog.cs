@@ -14,7 +14,7 @@ namespace TRSFBrewery
 
         public Categories Parse(String Row)
         {
-            Loogers loogers=new Loogers();
+            Loogers loogers = new Loogers();
             try
             {
                 Categories categories = new Categories();
@@ -23,21 +23,29 @@ namespace TRSFBrewery
                     var categor = Row.Split(',');
                     if (categor.Length == 2)
                     {
-                        categories.Id=int.Parse(categor[0]);
-                        categories.cat_name=categor[1];
-                        return categories;
+                        if (int.TryParse(categor[0].Trim('"'), out int Id))
+                        {
+                            categories.Id = Id;
+                            categories.cat_name = categor[1];
+                            return categories;
+                        }
+                        else
+                        {
+                            loogers.LogError($"El valor que no se puede conbertir es {categor[0]} ", "2");
+                            return null;
+                        }
                     }
-                    else 
-                    return null;
+                    else
+                        return null;
                 }
-                else 
-                return null;
+                else
+                    return null;
 
 
             }
             catch (Exception e)
             {
-                loogers.LogError(e.Message,"3");
+                loogers.LogError(e.Message, "3");
                 return null;
             }
         }
@@ -47,10 +55,10 @@ namespace TRSFBrewery
         /// </summary>
         /// <param name="FileName"></param>
         /// <returns></returns>
-        public async Task <List<Categories>> GetlistCategoriesAsync(String FileName)
+        public async Task<List<Categories>> GetlistCategoriesAsync(String FileName)
         {
             List<Categories> listCategories = new List<Categories>();
-            var Line =await loadAsync(FileName);
+            var Line = await loadAsync(FileName);
             foreach (var item in Line)
             {
                 var notnull = Parse(item);
