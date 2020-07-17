@@ -33,21 +33,22 @@ namespace TRSFBrewery
             var brewery = await BrC.GetlistBrewery(BreweryFile);
             WriteLine($"|-.........->");
             var bee = from bc in beer
-                      join sc in style 
+                      join sc in style
                       on bc.style_id equals sc.Id into ps
                       join br in brewery
                      on bc.brewery_id equals br.Id into sp
-                      where bc.Beer_name==Name
-                      select (beer: bc, ps.FirstOrDefault().style_name,sp.FirstOrDefault().name);
-                      //select (bc);
+                      where bc.Beer_name == Name
+                      select (beer: bc, ps.FirstOrDefault().style_name, sp.FirstOrDefault().name);
+            //select (bc);
             foreach (var i in bee)
             {
-                
-               WriteLine($"|-----------------------------------------|");
-              WriteLine($"{i.beer.Beer_name} | {i.style_name} | {i.name}");
-              //WriteLine($"{i.Beer_name} {i.brewery_id} {i.style_id}");
 
-            } WriteLine($"<-.........-|");
+                WriteLine($"|-----------------------------------------|");
+                WriteLine($"{i.beer.Beer_name} | {i.style_name} | {i.name}");
+                //WriteLine($"{i.Beer_name} {i.brewery_id} {i.style_id}");
+
+            }
+            WriteLine($"<-.........-|");
         }
 
         /// <summary>
@@ -73,27 +74,40 @@ namespace TRSFBrewery
 
         public async Task searchInBeerandBreweryAsync()
         {
-             WriteLine($"open==>");
+            Serialization serialization = new Serialization();
+            BeersAndBeweriesXml Sbeer = new BeersAndBeweriesXml();
+
+
+            WriteLine($"open==>");
             var beer = await BC.GetlistBeerAsync(BeerFile);
             var brewery = await BrC.GetlistBrewery(BreweryFile);
 
             var iWriterM = from b in beer
                            join br in brewery
                            on b.brewery_id equals br.Id into ps
-                           select (beer: b, ps.FirstOrDefault().name);
+                           //select (beer: b, ps.FirstOrDefault().name);
+                           select new BeersAndBeweriesXml(){Name_Beer= b.Beer_name, Name_Bewery= ps.FirstOrDefault().name};
+                           serialization.Write(iWriterM.ToList());
+/*
             foreach (var i in iWriterM)
             {
-              WriteLine($"el beer es {i.beer.Beer_name} y su brewery es {i.name}");   
-            }
-            WriteLine($"<== close ");  
+                //serialization.ListBeer(i.beer.Beer_name, i.name);
+                
+                 
+
+                WriteLine($"el beer es {i.beer.Beer_name} y su brewery es {i.name}");
+            }*/
+            WriteLine($"<== close ");
         }
 
         public async Task ExpBr()
         {
+
+
             WriteLine("comenzo ");
             var brewery = await BrC.GetlistBrewery(BreweryFile);
-            var result = from br in brewery 
-                        select br;
+            var result = from br in brewery
+                         select br;
 
             foreach (var item in result)
             {

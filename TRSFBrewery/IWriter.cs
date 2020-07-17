@@ -6,7 +6,7 @@ namespace TRSFBrewery
 {
     public interface IWriter
     {
-        void Write();
+        void Write(string filename);
         
     }
 }

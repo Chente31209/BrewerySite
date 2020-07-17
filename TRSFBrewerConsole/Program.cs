@@ -10,15 +10,19 @@ namespace TRSFBrewerConsole
         {
             Searchin searhin = new Searchin();
             BeerCatalog beerCatalog =new  BeerCatalog();
+            Serialization serialization =new Serialization();
             //searhin.searchIn("Unique");
 
             //await searhin.ExpBr();
             
-            //await searhin.searchInBeerandBreweryAsync();
+            await searhin.searchInBeerandBreweryAsync();
 
             //await searhin.searchBeerAsync() ;
 
-             await beerCatalog.getBeerAsync("Oktoberfest");
+             //await beerCatalog.getBeerAsync("Oktoberfest");
+             //serialization.Write();
+
+             
 
            
         }
