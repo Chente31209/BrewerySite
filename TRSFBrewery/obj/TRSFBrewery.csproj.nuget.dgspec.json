@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj": {}
+    "d:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj": {}
   },
   "projects": {
-    "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj": {
+    "d:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj",
+        "projectUniqueName": "d:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj",
         "projectName": "TRSFBrewery",
-        "projectPath": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj",
+        "projectPath": "d:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj",
         "packagesPath": "C:\\Users\\chent\\.nuget\\packages\\",
-        "outputPath": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\obj\\",
+        "outputPath": "d:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chent\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -9,7 +9,7 @@ namespace TRSFBrewery
         /// <summary>
         ///  este metodo es para transformar una linea de un arachivo a un objeto 
         /// </summary>
-        public Style Parse(String Row)
+        public async Task <Style> Parse(String Row)
         {
             Loogers logError = new Loogers();
             try
@@ -43,13 +43,13 @@ namespace TRSFBrewery
                             }
                             else
                         {
-                            logError.LogError($"El valor que no se puede conbertir es {styles[1]} ", "5");
+                            await  logError.LogError($"El valor que no se puede conbertir es {styles[1]} ", "5");
                             return null;
                         }
                         }
                         else
                         {
-                            logError.LogError($"El valor que no se puede conbertir es {styles[0]} ", "5");
+                            await  logError.LogError($"El valor que no se puede conbertir es {styles[0]} ", "5");
                             return null;
                         }
                     }
@@ -63,7 +63,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
-                logError.LogError(e.Message, "5");
+                await  logError.LogError(e.Message, "5");
                 return null;
             }
         }
@@ -79,7 +79,7 @@ namespace TRSFBrewery
             foreach (var item in Line)
             {
 
-                var notnull = Parse(item);
+                var notnull =await Parse(item);
                 if (notnull != null)
                     listStyle.Add(notnull);
             }/*

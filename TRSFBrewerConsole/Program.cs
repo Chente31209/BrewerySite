@@ -15,12 +15,12 @@ namespace TRSFBrewerConsole
 
             //await searhin.ExpBr();
             
-            await searhin.searchInBeerandBreweryAsync();
+           // await searhin.searchInBeerandBreweryAsync();
 
             //await searhin.searchBeerAsync() ;
 
-             //await beerCatalog.getBeerAsync("Oktoberfest");
-             //serialization.Write();
+             await beerCatalog.getBeerAsync("O");
+             serialization.Write();
 
              
 

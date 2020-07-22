@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Threading.Tasks;
+
 namespace TRSFBrewery
 {
     public class Loogers
@@ -10,7 +12,7 @@ namespace TRSFBrewery
         /// With this method, errors arising during the execution are guaranteed.
         /// </summary>
         /// <param name="error"></param>
-        public void LogError(String error, String NoCatalog)
+        public async Task LogError(String error, String NoCatalog)
         {
             String fileName=@"..\\Files\\LongError.txt";
            using (StreamWriter sw = File.AppendText(fileName))

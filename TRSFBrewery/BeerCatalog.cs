@@ -12,7 +12,7 @@ namespace TRSFBrewery
         /// <param name="Row"></param>
         /// <returns></returns>
 
-        public Beer Parse(String Row)
+        public  async Task<Beer> Parse(String Row)
         {
             Loogers logError = new Loogers();
             try
@@ -45,13 +45,13 @@ namespace TRSFBrewery
                                         }
                                     else
                                     {
-                                        logError.LogError($"El valor que no se puede conbertir es {Breweries[4]} ", "1");
+                                        await  logError.LogError($"El valor que no se puede conbertir es {Breweries[4]} ", "1");
                                         return null;
                                     }
                                 }
                                 else
                                 {
-                                    logError.LogError($"El valor que no se puede conbertir es {Breweries[3]} ", "1");
+                                    await  logError.LogError($"El valor que no se puede conbertir es {Breweries[3]} ", "1");
                                     return null;
                                 }
 
@@ -59,13 +59,13 @@ namespace TRSFBrewery
                             }
                             else
                             {
-                                logError.LogError($"El valor que no se puede conbertir es {Breweries[1]} ", "1");
+                                await  logError.LogError($"El valor que no se puede conbertir es {Breweries[1]} ", "1");
                                 return null;
                             }
                         }
                         else
                         {
-                            logError.LogError($"El valor que no se puede conbertir es {Breweries[0]} ", "1");
+                            await  logError.LogError($"El valor que no se puede conbertir es {Breweries[0]} ", "1");
                             return null;
                         }
                     }
@@ -80,7 +80,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
-                logError.LogError(e.Message, "1 Beer catalog");
+                await logError.LogError(e.Message, "1 Beer catalog");
                 return null;
             }
         }
@@ -96,7 +96,7 @@ namespace TRSFBrewery
             var Line = await loadAsync(FileName);
             foreach (var item in Line)
             {
-                var notnull = Parse(item);
+                var notnull = await Parse(item);
                 if (notnull != null)
                     listBeer.Add(notnull);
 

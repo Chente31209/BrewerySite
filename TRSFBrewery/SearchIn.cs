@@ -37,7 +37,7 @@ namespace TRSFBrewery
                       on bc.style_id equals sc.Id into ps
                       join br in brewery
                      on bc.brewery_id equals br.Id into sp
-                      where bc.Beer_name == Name
+                      where bc.Beer_name.StartsWith(Name)
                       select (beer: bc, ps.FirstOrDefault().style_name, sp.FirstOrDefault().name);
             //select (bc);
             foreach (var i in bee)
@@ -113,7 +113,7 @@ namespace TRSFBrewery
             {
                 WriteLine($"{item.Id} {item.name}");
             }
-            WriteLine("Se ejeto");
+            WriteLine("Se ejecuto");
         }
     }
 }

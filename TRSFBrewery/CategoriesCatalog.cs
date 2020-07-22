@@ -12,7 +12,7 @@ namespace TRSFBrewery
         /// <param name="Row"></param>
         /// <returns></returns>
 
-        public Categories Parse(String Row)
+        public async Task <Categories> Parse(String Row)
         {
             Loogers loogers = new Loogers();
             try
@@ -31,7 +31,7 @@ namespace TRSFBrewery
                         }
                         else
                         {
-                            loogers.LogError($"El valor que no se puede conbertir es {categor[0]} ", "2");
+                            await  loogers.LogError($"El valor que no se puede conbertir es {categor[0]} ", "2");
                             return null;
                         }
                     }
@@ -45,7 +45,7 @@ namespace TRSFBrewery
             }
             catch (Exception e)
             {
-                loogers.LogError(e.Message, "3");
+                await  loogers.LogError(e.Message, "3");
                 return null;
             }
         }
@@ -61,7 +61,7 @@ namespace TRSFBrewery
             var Line = await loadAsync(FileName);
             foreach (var item in Line)
             {
-                var notnull = Parse(item);
+                var notnull =await Parse(item);
                 if (notnull != null)
                     listCategories.Add(notnull);
 
