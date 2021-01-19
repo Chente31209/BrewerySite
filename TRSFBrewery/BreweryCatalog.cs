@@ -45,8 +45,6 @@ namespace TRSFBrewery
                             await  logError.LogError($"El valor que no se puede conbertir es {Breweries[0]} ", "2");
                             return null;
                         }
-
-
                     }
                     else
                         return null;
@@ -63,6 +61,7 @@ namespace TRSFBrewery
                 return null;
             }
         }
+
 
         /// <summary>
         /// 

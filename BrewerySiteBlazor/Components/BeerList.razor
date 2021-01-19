@@ -1,0 +1,41 @@
+﻿<button class="btn btn-primary" @onclick="OnAddClick">Add Beer</button>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Id</th>
+            <th>Id Bergy</th>
+            <th>Name </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in BeerListItems)
+        {
+            <tr>
+                <td><button class="btn btn-warning" @onclick="e => OnEditClick.InvokeAsync(item)">Edit</button></td>
+                <td>@item.id</td>
+                <td>@item.brewery_id</td>
+                <td>@item.beer_name</td>
+                <td><button class="btn btn-danger" @onclick="e => OnDeleteClick.InvokeAsync(item)">Delete</button></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+@code {
+
+    [Parameter]
+    public BeerListItem[] BeerListItems { get; set; }
+
+    [Parameter]
+    public EventCallback OnAddClick { get; set; }
+
+    [Parameter]
+    public EventCallback<BeerListItem> OnEditClick { get; set; }
+
+    [Parameter]
+    public EventCallback<BeerListItem> OnDeleteClick { get; set; }
+}
+

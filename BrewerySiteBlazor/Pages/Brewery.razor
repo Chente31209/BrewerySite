@@ -1,0 +1,86 @@
+﻿@page "/Brewery"
+@inject ICRUDService<BreweryListItem, BreweryItem> service;
+
+<h2>Article Categories</h2>
+<div class="mt-3">
+    @if (!string.IsNullOrEmpty(error))
+    {
+        <div class="alert alert-danger">
+            @error
+        </div>
+    }
+
+    @if (currentCategory == null)
+    {
+        <BreweryList BreweryListItems="BreweryListItems"
+                     OnAddClick="AddCategory"
+                     OnEditClick="EditCategory"
+                     OnDeleteClick="DeleteCategory">
+        </BreweryList>
+    }
+    else
+    {
+        <!--        <Brewery Category="currentCategory"
+                          OnSaveClick="SaveCategory"
+                          OnCancelClick="ShowList">
+         </Brewery>
+         -->
+
+    }
+
+</div>
+
+@code {
+    private BreweryListItem[] BreweryListItems;
+    private BreweryItem currentCategory;
+    private string error;
+
+    protected async Task DeleteCategory()
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ShowList();
+    }
+
+    public async Task ShowList()
+    {
+        BreweryListItems = await service.GetList();
+        this.currentCategory = null;
+    }
+
+    public async Task AddCategory()
+    {
+        this.currentCategory = await service.GetNew();
+    }
+
+    public async Task EditCategory(BreweryListItem item)
+    {
+        this.currentCategory = await service.Get(item.id);
+    }
+
+
+    public async Task SaveCategory(BreweryItem item)
+    {
+        try
+        {
+            if (currentCategory.id == 0)
+            {
+                await service.Create(currentCategory);
+            }
+            else
+            {
+                await service.Update(currentCategory);
+            }
+            await this.ShowList();
+        }
+        catch (Exception ex)
+        {
+            this.error = ex.Message;
+        }
+    }
+}
+
+

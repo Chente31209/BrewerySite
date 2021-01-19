@@ -13,20 +13,26 @@
         "packagesPath": "C:\\Users\\chent\\.nuget\\packages\\",
         "outputPath": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewerConsole\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\chent\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\chent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj": {
-                "projectPath": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj"
+              "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSF.Brewery.csproj": {
+                "projectPath": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSF.Brewery.csproj"
               }
             }
           }
@@ -54,26 +60,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj": {
+    "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSF.Brewery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj",
-        "projectName": "TRSFBrewery",
-        "projectPath": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSFBrewery.csproj",
+        "projectUniqueName": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSF.Brewery.csproj",
+        "projectName": "TRSF.Brewery",
+        "projectPath": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\TRSF.Brewery.csproj",
         "packagesPath": "C:\\Users\\chent\\.nuget\\packages\\",
         "outputPath": "D:\\User\\Vicente\\Proyectos\\Cursos de Programacion\\Curso de C#\\Repocitorio\\BrewerySite\\TRSFBrewery\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\chent\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\chent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -104,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

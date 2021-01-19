@@ -1,0 +1,87 @@
+﻿@page "/Beer"
+@inject ICRUDService<BeerListItem,BeerItem> service;
+
+<h3>Beer</h3>
+
+<div class="mt-3">
+
+    @if (currentbeer == null)
+    {
+
+        <BeerList BeerListItems="beerListItems"
+                  OnAddClick="AddArticle"
+                  OnEditClick="EditArticle"
+                  OnDeleteClick="DeleteArticle">
+        </BeerList>
+
+    }
+    else
+    {
+        <h2> deplegar lista</h2>
+        <!--
+                <Beer Item="currentbeer"
+                      OnSaveClick="SaveArticle"
+                      OnCancelClick="ShowList">
+                </Beer>
+        -->
+    }
+</div>
+        @code {
+            private BeerListItem[] beerListItems;
+            private BeerItem currentbeer;
+            private string error;
+
+            protected override async Task OnInitializedAsync()
+            {
+                await ShowList();
+            }
+
+            public async Task ShowList()
+            {
+                beerListItems = await service.GetList();
+                this.currentbeer = null;
+            }
+
+            public async Task AddArticle()
+            {
+                this.currentbeer = await service.GetNew();
+            }
+
+            public async Task EditArticle(BeerListItem item)
+            {
+                this.currentbeer = await service.Get(item.id);
+            }
+
+            public async Task SaveArticle(BeerItem item)
+            {
+                try
+                {
+                    if (currentbeer.id == 0)
+                    {
+                        await service.Create(currentbeer);
+                    }
+                    else
+                    {
+                        await service.Update(currentbeer);
+                    }
+                    await this.ShowList();
+                }
+                catch (Exception ex)
+                {
+                    this.error = ex.Message;
+                }
+            }
+
+            public async Task DeleteArticle(BeerItem item)
+            {
+                try
+                {
+                    await service.Delete(item.id);
+                    await this.ShowList();
+                }
+                catch (Exception ex)
+                {
+                    this.error = ex.Message;
+                }
+            }
+        }

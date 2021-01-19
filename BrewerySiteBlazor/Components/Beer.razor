@@ -1,0 +1,34 @@
+﻿<h3>Beer</h3>
+<EditForm Model="@Item" OnValidSubmit="@(e => OnSaveClick.InvokeAsync(Item))">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+
+    <div class="form-group">
+        <label for="name">Title: </label>
+        <InputText id="name" @bind-Value="Item.beer_name" class="form-control" />
+        <ValidationMessage For="@(() => Item.beer_name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="content">Content: </label>
+        <InputTextArea id="content" @bind-Value="Item.beer_name" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-warning" @onclick="OnCancelClick">Cancel</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public BeerItem currentBeer { get; set; } 
+
+    [Parameter]
+    public BeerItem Item { get; set; }
+
+    [Parameter]
+    public EventCallback<BeerItem> OnSaveClick { get; set; }
+    [Parameter]
+    public EventCallback OnCancelClick { get; set; }
+}
+

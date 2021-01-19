@@ -8,11 +8,11 @@ namespace TRSFBrewery
     public class Searchin
     {
         // rutas de los catalogos 
-        static String StylesFile = @"..\\Files\\styles.csv";
-        static String BeerFile = @"..\\Files\\beers-cleaned.csv";
-        static String BreweryFile = @"..\\Files\\breweries.csv";
-        static String OccasionsFile = @"..\\Files\\Occasions.csv";
-        static String CategoriesFile = @"..\\Files\\categories.csv";
+        static String StylesFile = @"..\\Files\\styles.csv";//api
+        static String BeerFile = @"..\\Files\\beers-cleaned.csv";//api
+        static String BreweryFile = @"..\\Files\\breweries.csv";//api
+        static String OccasionsFile = @"..\\Files\\Occasions.csv";//api
+        static String CategoriesFile = @"..\\Files\\categories.csv";//api
 
         // objetos de los catalogos 
         BeerCatalog BC = new BeerCatalog();

@@ -1,0 +1,38 @@
+﻿@inherits LayoutComponentBase
+<br />
+<MainMenu MenuItems="MenuItems" OnMenuItemClick="MenuItemClick" />
+<div class="container mt-3">
+    @Body
+    
+</div>
+
+@code {
+    public MenuItem[] MenuItems { get; set; }
+    protected override void OnInitialized()
+    {
+        this.loadMenuItems();
+    }
+    public void MenuItemClick(MenuItem item)
+    {
+        foreach (var menuItem in MenuItems)
+        {
+            menuItem.Active = false;
+        }
+        item.Active = true;
+    }
+
+
+    private void loadMenuItems()
+    {
+        this.MenuItems = new MenuItem[] {
+        new MenuItem()
+            { Caption = "Beer", Active = true ,href="Beer" },
+        new MenuItem()
+            { Caption = "Brewery", Active = false ,href="Brewery"},
+        new MenuItem()
+            { Caption = "Categoris", Active = false ,href="Categoris"}
+
+};
+    }
+
+}
